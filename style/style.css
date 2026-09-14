@@ -33,6 +33,7 @@ body{
     padding: 20px;
     background: var(--slate-100);
     border-bottom: 1px solid var(--slate-400);
+    align-items: center;
 }
 
 .logotipo{
@@ -41,21 +42,53 @@ body{
     gap: 5px;
 }
 
+.logotipo svg{
+    width: 30px;
+    height: auto;
+}
 .logotipo svg, span{
     color: #16a34a;
 }
 
 .logotipo h2{
+    font-size: 28px;
     font-family: var(--font-display);
 }
 
-.opcoes{
-    gap: 20px;
+.opcoes a{
+    font-family: var(--font-display);
+    padding: 10px;
+    color: var(--slate-500);
+    gap: 50px;
+    text-decoration: none;
+    font-size: 18px;
 }
 
-.opcoes a{
-    text-decoration: none;
+.opcoes a:hover{
+    background: var(--slate-400);
+    color: var(--white);
+    border-radius: 100px;
+    transition:
+    background 0.3s ease,
+    color 0.3s ease;
 }
+
+.alugar{
+    background: #16a34a;
+    color: var(--white) !important;
+    border-radius: 100px;
+    font-family: var(--font-display);
+}
+
+.alugar:hover{
+    background: var(--green-dark) !important;
+    box-shadow: 0 0 10px 5px rgb(0, 0, 0, 0.1);
+    transition: 
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
 
 
 /* ------ Conteúdo do Hero --------- */
@@ -108,4 +141,21 @@ body{
     color: var(--white) !important;
     padding: 20px;
     border-radius: 100px;
+}
+
+/* ----- cards ------- */
+.container-infos{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background: var(--slate-100);
+    border: 1px solid var(--slate-500);
+    border-radius: 10px;
+    max-width: 700px;
+    text-align: center;
+    padding: 40px;
+}
+
+.info{
+    font-family: var(--font-body);
+    line-height: 2;
 }
