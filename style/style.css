@@ -107,6 +107,10 @@ body{
     font-size: 12px;
     font-weight: 700;
     margin-bottom: 50px;
+    background: #16a34a28;
+    padding: 10px;
+    width: 170px;
+    border-radius: 10px;
 }
 
 .titulo-principal h2{
@@ -135,6 +139,11 @@ body{
 .botoes-opcoes a{
     color: var(--slate-500);
     text-decoration: none;
+    cursor: pointer;
+}
+
+.botoes-opcoes a:hover{
+    text-decoration: underline;
 }
 
 .botao-verde{
@@ -143,6 +152,30 @@ body{
     color: var(--white) !important;
     padding: 20px;
     border-radius: 100px;
+    box-shadow: 0 0px 15px #16a34a6e;
+}
+
+.botao-verde:hover{
+    text-decoration: none !important;
+    transition: background 0.3s ease;
+    background: var(--green-dark);
+}
+
+/* card que fica junto com a imagem */
+.check{
+    background: var(--green-light);
+    color: var(--green);
+    width: 30px;
+    padding: 5px;
+    border-radius: 100px;
+    justify-content: center;
+}
+
+.card{
+    display: flex;
+    gap: 20px;
+    background: white;
+    box-shadow: rgb(0, 0, 0, 0.1);
 }
 
 /* ----- cards ------- */
@@ -150,14 +183,16 @@ body{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     background: var(--slate-100);
-    border: 1px solid var(--slate-500);
     border-radius: 10px;
     max-width: 700px;
     text-align: center;
     padding: 40px;
+    position: relative;
+    bottom: 40px;
 }
 
 .info{
     font-family: var(--font-body);
     line-height: 2;
+    color: var(--slate-700);
 }
