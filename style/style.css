@@ -91,9 +91,6 @@ body{
         box-shadow 0.3s ease;
 }
 
-
-
-
 /* ------ Conteúdo do Hero --------- */
 .hero{
     margin: 70px;
@@ -226,7 +223,7 @@ body{
 /* seção dois de informações */
 .section-2{
     background: var(--slate-100);
-    padding: 50px;
+    padding: 70px;
     border: 2px solid var(--slate-200);
 }
 
@@ -278,4 +275,51 @@ body{
     font-family: var(--font-display);
     font-size: 20px;
     width: 350px;
+}
+
+/* ---------------- Catálogo de Bikes -------------------- */
+.section-3{
+    background: var(--bg);
+    padding: 70px;
+}
+
+.titulo-catalogo{
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+.titulo-catalogo p{
+    font-family: var(--font-body);
+    font-size: 12px;
+    color: var(--slate-400);
+    margin-left: 90%;
+}
+
+.titulo-catalogo h5{
+    text-transform: uppercase;
+    color: #16a34a;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.titulo-catalogo h1{
+    font-family: var(--font-display);
+    font-size: 60px;
+}
+
+.fileira-bike{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.bike{
+    background: var(--white);
+    border: 1px solid var(--slate-200);
+    width: 300px;
+}
+
+.bike img{
+    
 }
