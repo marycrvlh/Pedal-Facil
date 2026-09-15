@@ -129,7 +129,7 @@ body{
 
 .hero img{
     border-radius: 10px;
-    box-shadow: 0 8px 20px rgb(0, 0, 0, 0.5);
+    box-shadow: 0 8px 20px rgb(0, 0, 0, 0.2);
 }
 
 .botoes-opcoes{
@@ -186,6 +186,14 @@ body{
     padding: 50px;
 }
 
+.como-funciona{
+    text-align: center;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 30px;
+    margin-bottom: 40px;
+}
+
 .fileira-cards{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -194,18 +202,19 @@ body{
 
 .card{
     background: var(--white);
+    box-shadow: 0 0px 25px rgb(0, 0, 0, 0.1);
     padding: 20px;
     border-radius: 10px;
     display: flex;
     align-items: center;
+    width: 520px;
     line-height: 1.5;
-    width: 500px;
 }
 
 .titulo-verde{
     font-size: 90px;
     font-family: var(--font-display);
-    color: #16a34a3f;
+    color: #1ac4581c;
     margin-left: 20px;
 }
 
@@ -217,11 +226,11 @@ body{
 
 .card-conteudo h2{
     color: var(--slate-900);
-    font-family: var(--font-body);
+    font-family: var(--font-display);
 }
 
 .card-conteudo p{
-    color: var(--slate-700);
+    color: var(--slate-500);
     font-family: var(--font-display);
     font-size: 20px;
     width: 350px;
