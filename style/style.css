@@ -25,6 +25,7 @@
 body{
     margin: 0%;
     min-height: 100vh;
+    background: var(--bg);
 }
 
 .header{
@@ -161,28 +162,10 @@ body{
     background: var(--green-dark);
 }
 
-/* card que fica junto com a imagem */
-.check{
-    background: var(--green-light);
-    color: var(--green);
-    width: 30px;
-    padding: 5px;
-    border-radius: 100px;
-    justify-content: center;
-}
-
-.card{
-    display: flex;
-    gap: 20px;
-    background: white;
-    box-shadow: rgb(0, 0, 0, 0.1);
-}
-
 /* ----- cards ------- */
 .container-infos{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    background: var(--slate-100);
     border-radius: 10px;
     max-width: 700px;
     text-align: center;
@@ -195,4 +178,51 @@ body{
     font-family: var(--font-body);
     line-height: 2;
     color: var(--slate-700);
+}
+
+/* seção dois de informações */
+.section-2{
+    background: var(--slate-100);
+    padding: 50px;
+}
+
+.fileira-cards{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card{
+    background: var(--white);
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    line-height: 1.5;
+    width: 500px;
+}
+
+.titulo-verde{
+    font-size: 90px;
+    font-family: var(--font-display);
+    color: #16a34a3f;
+    margin-left: 20px;
+}
+
+.card-conteudo h3{
+    color: var(--green);
+    font-family: var(--font-display);
+    font-weight: 700;
+}
+
+.card-conteudo h2{
+    color: var(--slate-900);
+    font-family: var(--font-body);
+}
+
+.card-conteudo p{
+    color: var(--slate-700);
+    font-family: var(--font-display);
+    font-size: 20px;
+    width: 350px;
 }
