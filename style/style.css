@@ -314,12 +314,51 @@ body{
     grid-template-columns: repeat(4, 1fr);
 }
 
+.categoria{
+    background: var(--green);
+    padding: 5px;
+    font-family: var(--font-display);
+    color: var(--white);
+    width: 65px;
+    border-radius: 100px;
+    position: relative;
+    top: 40px;
+    margin-left: 10px;
+}
+
 .bike{
     background: var(--white);
     border: 1px solid var(--slate-200);
-    width: 300px;
+    width: 400px;
+    border-radius: 10px;
 }
 
 .bike img{
-    
+    width: 400px;
+    overflow: cover;
+    border-radius: 10px;
+}
+
+.descricao-bike{
+    padding: 10px;
+    border-bottom: 1px solid var(--slate-200);
+    width: 300px;
+}
+
+.tipo{
+    color: #16a34a;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: var(--font-display);
+    text-transform: uppercase;
+}
+
+.nome-bike{
+    font-family: var(--font-display);
+}
+
+.descricao{
+    font-family: var(--font-body);
+    color: var(--slate-400);
+    font-size: 16px;
 }
