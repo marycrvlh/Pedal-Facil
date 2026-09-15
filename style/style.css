@@ -97,6 +97,7 @@ body{
 /* ------ Conteúdo do Hero --------- */
 .hero{
     margin: 70px;
+    padding: 20px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
  }
@@ -127,9 +128,50 @@ body{
     font-family: var(--font-body);
 }
 
-.hero img{
+.imagem-hero{
     border-radius: 10px;
-    box-shadow: 0 8px 20px rgb(0, 0, 0, 0.2);
+    box-shadow: 0 0px 20px rgb(0, 0, 0, 0.2);
+}
+
+.card-flutuante{
+    background: var(--white);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0px 10px rgb(0, 0, 0, 0.2);
+    width: 300px;
+    position: relative;
+    bottom: 70px;
+    margin-left: -80px;
+}
+
+.card-flutuante h2{
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--slate-500);
+    border-bottom: 1px solid var(--slate-200);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.bikes-disponiveis{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 20px;
+    margin-bottom: 30px;
+}
+
+.bikes-disponiveis p{
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.bikes-disponiveis svg{
+    width: 30px;
+    height: auto;
 }
 
 .botoes-opcoes{
@@ -171,19 +213,21 @@ body{
     text-align: center;
     padding: 40px;
     position: relative;
-    bottom: 40px;
+    bottom: 200px;
+    margin-left: -90px;
 }
 
 .info{
     font-family: var(--font-body);
     line-height: 2;
-    color: var(--slate-700);
+    color: var(--slate-500);
 }
 
 /* seção dois de informações */
 .section-2{
     background: var(--slate-100);
     padding: 50px;
+    border: 2px solid var(--slate-200);
 }
 
 .como-funciona{
