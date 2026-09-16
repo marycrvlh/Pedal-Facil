@@ -309,7 +309,7 @@ body{
     font-size: 60px;
 }
 
-.fileira-bike{
+.catalogo-card{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
 }
@@ -322,15 +322,20 @@ body{
     width: 65px;
     border-radius: 100px;
     position: relative;
-    top: 40px;
-    margin-left: 10px;
+    top: 50px;
+    margin-left: 20px;
+}
+
+.catalogo-card{
+    object-fit: cover;
 }
 
 .bike{
     background: var(--white);
     border: 1px solid var(--slate-200);
-    width: 400px;
+    width: 420px;
     border-radius: 10px;
+    padding: 10px;
 }
 
 .bike img{
@@ -342,12 +347,10 @@ body{
 .descricao-bike{
     padding: 10px;
     border-bottom: 1px solid var(--slate-200);
-    width: 300px;
 }
 
 .tipo{
     color: #16a34a;
-    font-size: 16px;
     font-weight: 700;
     font-family: var(--font-display);
     text-transform: uppercase;
@@ -361,4 +364,48 @@ body{
     font-family: var(--font-body);
     color: var(--slate-400);
     font-size: 16px;
+}
+
+.preco-bike{
+    padding: 10px;
+}
+
+.preco-bike small{
+    font-family: var(--font-body);
+    font-size: 12px;
+    color: var(--slate-500);
+}
+
+.preco{
+    color: var(--slate-900);
+    font-family: var(--font-display);
+    font-size: 40px;
+}
+
+.status{
+    color: var(--green);
+    font-family: var(--font-display);
+    font-weight: 700;
+    margin-left: 300px;
+    position: relative;
+    bottom: 50px;
+}
+
+.botao-alugar{
+    padding: 10px;
+    font-family: var(--font-display);
+    color: var(--white);
+    background: var(--green);
+    border-radius: 20px;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    width: 400px;
+}
+
+.botao-alugar:hover{
+    background: var(--green-dark);
+    cursor: pointer;
+    box-shadow: 0 0px 20px rgb(0, 0, 0, 0.1);
 }
