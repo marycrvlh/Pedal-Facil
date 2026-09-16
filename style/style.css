@@ -127,7 +127,7 @@ body{
 
 .imagem-hero{
     border-radius: 10px;
-    box-shadow: 0 0px 20px rgb(0, 0, 0, 0.2);
+    box-shadow: 0 0px 10px rgb(0, 0, 0, 0.2);
 }
 
 .card-flutuante{
@@ -180,10 +180,12 @@ body{
     color: var(--slate-500);
     text-decoration: none;
     cursor: pointer;
+    transition: 0.3s ease;
 }
 
 .botoes-opcoes a:hover{
     text-decoration: underline;
+    transform: translateY(-8px);
 }
 
 .botao-verde{
@@ -220,6 +222,10 @@ body{
     color: var(--slate-500);
 }
 
+.info p{
+    font-weight: bold;
+}
+
 /* seção dois de informações */
 .section-2{
     background: var(--slate-100);
@@ -232,7 +238,7 @@ body{
     font-family: var(--font-display);
     font-weight: 700;
     font-size: 30px;
-    margin-bottom: 40px;
+    margin-bottom: 70px;
 }
 
 .fileira-cards{
@@ -250,6 +256,13 @@ body{
     align-items: center;
     width: 520px;
     line-height: 1.5;
+    transition: 0.3s;
+}
+
+.card:hover{
+    box-shadow: 0 0px 25px #16a34a73;
+    cursor: pointer;
+    transform: translateY(-8px);
 }
 
 .titulo-verde{
@@ -276,6 +289,7 @@ body{
     font-size: 20px;
     width: 350px;
 }
+
 
 /* ---------------- Catálogo de Bikes -------------------- */
 .section-3{
@@ -309,103 +323,229 @@ body{
     font-size: 60px;
 }
 
-.catalogo-card{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+.cards_catalog {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 4rem;
+  margin-bottom: 10rem;
+}
+ 
+.card_catalog {
+  height: 700px;
+  width: 400px;
+  padding: 10px;
+  object-fit: cover;
+  background-color: var(--slate-100);
+  border: 1px solid var(--slate-200);
+  border-radius: 1rem;
+  transition: 0.3s ease;
 }
 
-.categoria{
-    background: var(--green);
-    padding: 5px;
-    font-family: var(--font-display);
+.card_catalog:hover{
+    cursor: pointer;
+    transform: translateY(-8px);
+    box-shadow: 0 4px 15px rgb(0, 0, 0, 0.2);
+}
+ 
+.popular_badge {
+  position: absolute;
+  z-index: 1000;
+  background-color: var(--green);
+  width: 70px;
+  border-radius: 1rem;
+  margin-top: 15px;
+  margin-left: 10px;
+  padding: 5px;
+}
+ 
+.popular_badge p {
+  justify-self: center;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--white);
+}
+ 
+.img_bike {
+  height: 50%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+ 
+.class_bike {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: bold;
+  color: var(--green);
+  margin-left: 12px;
+  margin-top: 10px;
+}
+ 
+.name_bike {
+  font-family: var(--font-display);
+  color: var(--slate-900);
+  font-size: 25px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+ 
+.description_bike {
+  color: var(--slate-500);
+  font-family: var(--font-body);
+  font-size: 16px;
+  max-width: 300px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 10px;
+}
+ 
+.card_catalog hr {
+  color: var(--slate-400);
+  width: 95%;
+  align-self: center;
+  justify-self: center;
+  margin: 20px;
+}
+ 
+.pre_value {
+  padding-left: 10px;
+  margin-top: 10px;
+  color: var(--slate-500);
+  font-family: var(--font-body);
+  font-size: 12px;
+}
+ 
+.value_available {
+  display: flex;
+  flex-direction: row;
+}
+ 
+.value_bike {
+  padding-left: 14px;
+  margin-top: 6px;
+  color: var(--slate-800);
+  font-family: var(--font-display);
+  font-size: 30px;
+  font-weight: bold;
+}
+ 
+.slash_day_value {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--slate-500);
+}
+ 
+.value_available li {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: 100%;
+  color: var(--green);
+}
+ 
+.button_alocate_div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+ 
+.alocate_button {
+  background-color: var(--green);
+  border: none;
+  border-radius: 20px;
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  height: 50px;
+  width: 16rem;
+  cursor: pointer;
+  transition: 0.5s;
+}
+ 
+.alocate_button:hover{
+  background-color: var(--green-dark);
+  box-shadow: 0 0px 10px rgb(0, 0, 0, 0.4);
+  transform: translateY(-5px);
+}
+ 
+.off {
+  display: none;
+}
+ 
+.unavailable {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+ 
+.unavailable.alocate_button {
+  background-color: var(--slate-500);
+}
+ 
+.unavailable.alocate_button:hover {
+  box-shadow: none;
+  background-color: var(--slate-500);
+}
+ 
+#availability_list_off {
+  color: var(--slate-500);
+}
+
+.container-vamos-pedalar{
+    background: linear-gradient(to left, var(--green-dark), var(--green));
+    margin: 50px;
+    padding: 50px;
+    border-radius: 20px;
+    display: flex;
+    gap: 50%;
+    height: 200px;
+    align-items: center;
+    overflow: hidden;
+}
+
+.titulo-destaque h2{
     color: var(--white);
-    width: 65px;
-    border-radius: 100px;
-    position: relative;
-    top: 50px;
-    margin-left: 20px;
-}
-
-.catalogo-card{
-    object-fit: cover;
-}
-
-.bike{
-    background: var(--white);
-    border: 1px solid var(--slate-200);
-    width: 420px;
-    border-radius: 10px;
-    padding: 10px;
-}
-
-.bike img{
-    width: 400px;
-    overflow: cover;
-    border-radius: 10px;
-}
-
-.descricao-bike{
-    padding: 10px;
-    border-bottom: 1px solid var(--slate-200);
-}
-
-.tipo{
-    color: #16a34a;
-    font-weight: 700;
     font-family: var(--font-display);
-    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 30px;
+    margin-bottom: 20px;
 }
 
-.nome-bike{
-    font-family: var(--font-display);
-}
-
-.descricao{
+.titulo-destaque p{
+    color: var(--white);
     font-family: var(--font-body);
-    color: var(--slate-400);
     font-size: 16px;
 }
 
-.preco-bike{
-    padding: 10px;
-}
-
-.preco-bike small{
-    font-family: var(--font-body);
-    font-size: 12px;
-    color: var(--slate-500);
-}
-
-.preco{
-    color: var(--slate-900);
-    font-family: var(--font-display);
-    font-size: 40px;
-}
-
-.status{
-    color: var(--green);
-    font-family: var(--font-display);
-    font-weight: 700;
-    margin-left: 300px;
-    position: relative;
-    bottom: 50px;
-}
-
-.botao-alugar{
-    padding: 10px;
-    font-family: var(--font-display);
-    color: var(--white);
-    background: var(--green);
-    border-radius: 20px;
-    border: none;
-    font-size: 20px;
-    font-weight: bold;
+.alugue-sua-bike{
     text-align: center;
-    width: 400px;
+    width: 250px;
+    padding: 15px;
+    border: none;
+    border-radius: 20px;
+    background: var(--white);
+    font-family: var(--font-body);
+    font-weight: bold;
+    font-size: 15px;
+    box-shadow: 0 5px 20px rgb(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: 0.3s ease;
 }
 
-.botao-alugar:hover{
-    background: var(--green-dark);
-    cursor: pointer;
-    box-shadow: 0 0px 20px rgb(0, 0, 0, 0.1);
+.alugue-sua-bike:hover{
+    transform: translateY(-5px);
+}
+
+.alugue-sua-bike:hover .seta{
+    margin-left: 15px;
+}
+
+.seta{
+    transition: 0.3s ease;
+    margin-left: 10px;
+    color: #16a34a;
+    font-size: 15px;
+    font-weight: bold;
 }
