@@ -57,30 +57,61 @@
 
         <section>
             <div class="formulario-reserva">
+                <h2 class="titulo-destaque"> dados pessoais </h2>
 
                 <div class="dados-pessoais">
-                    <h2 class="titulo-destaque"> dados pessoais </h2>
-
                     <form>
                         <label for="nome"> Nome Completo <span class="asteristico"> * </span> </label>
                         <input type="text" placeholder="Ex: Maria Silva">
                         
-                        <label for="nome"> Telefone <span class="asteristico"> * </span> </label>
+                        <label for="tel"> Telefone <span class="asteristico"> * </span> </label>
                         <input type="tel" placeholder="(11) 99999-9999">
                     </form>
                 </div>
 
                 <div class="endereco">
-                    <h2> Endereço completo </h2>
+                    <h2 class="titulo-destaque"> endereço completo </h2>
 
+                    <form>
+                        <label for="cep"> CEP <span class="asteristico"> * </span> </label>
+                        <input type="text" placeholder="00000-000">
+
+                        <label for="logradouro"> Logradouro <span class="asteristico"> * </span> </label>
+                        <input type="text" placeholder="Ex: Rua, Avenida, etc.">
+
+                        <div class="segunda-linha">
+                            <label for="num"> Número <span class="asteristico"> * </span> </label>
+                            <input type="number" placeholder="123">
+
+                            <label for="bairro"> Bairro <span class="asteristico"> * </span> </label>
+                            <input type="text" placeholder="Nome do bairro">
+
+                            <label for="cidade"> Cidade <span class="asteristico"> * </span> </label>
+                            <input type="text" placeholder="São Paulo">
+
+                            <label for="estado"> LIF <span class="asteristico"> * </span> </label>
+                            <input type="text" placeholder="SP">
+                        </div>
+                    </form>
+                </div>
+
+                <div class="emprestimo">
+                    <h2 class="titulo-destaque"> período de empréstimo </h2>
+                        <form>
+                            <label for="data-retirada"> Data de retirada <span class="asteristico"> * </span> </label>
+                            <input type="date" placeholder="dd/mm/aaaa">
+                            
+                            <label for="h-retirada"> Horário de Retirada <span class="asteristico"> * </span> </label>
+                            <input type="time" placeholder="--:--">
+    
+                            <label for="data-devolucao"> Data de devolução <span class="asteristico"> * </span> </label>
+                            <input type="date" placeholder="dd/mm/aaaa">
+                        </form>
                 </div>
             </div>
-
         </section>
 
-        
-
-
+        <button class="botao-reserva" onclick="AbrirModal()"> Confirmar reserva </button>
     </main>
 </body>
 </html>
