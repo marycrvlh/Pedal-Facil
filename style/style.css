@@ -85,10 +85,9 @@ body{
 
 .alugar:hover{
     background: var(--green-dark) !important;
-    box-shadow: 0 0 10px 5px rgb(0, 0, 0, 0.1);
+    box-shadow: 0 0px 15px rgb(0, 0, 0, 0.1);
     transition: 
-        background 0.3s ease,
-        box-shadow 0.3s ease;
+        background 0.3s ease;
 }
 
 /* ------ Conteúdo do Hero --------- */
