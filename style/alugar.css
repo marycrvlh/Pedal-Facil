@@ -1,0 +1,199 @@
+:root {
+  --green: #16a34a;
+  --green-dark: #15803d;
+  --green-light: #dcfce7;
+  --green-pale: #f0fdf4;
+  --slate-900: #0f172a;
+  --slate-700: #334155;
+  --slate-500: #64748b;
+  --slate-400: #94a3b8;
+  --slate-200: #e2e8f0;
+  --slate-100: #f1f5f9;
+  --white: #ffffff;
+  --bg: #f8fafc;
+  --font-display: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+main{
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--bg);
+    box-sizing: border-box;
+}
+
+.header{
+    position: absolute;
+    z-index: 1000;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background: var(--slate-100);
+    border-bottom: 1px solid var(--slate-400);
+    align-items: center;
+    gap: 50px;
+}
+
+.logotipo{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-left: 40px;
+}
+
+.logotipo svg{
+    width: 30px;
+    height: auto;
+}
+.logotipo svg, span{
+    color: #16a34a;
+}
+
+.logotipo h2{
+    font-size: 28px;
+    font-family: var(--font-display);
+}
+
+.opcoes a{
+    font-family: var(--font-body);
+    padding: 10px;
+    color: var(--green);
+    gap: 50px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.opcoes a:hover{
+    background: var(--green-dark);
+    color: var(--white);
+    border-radius: 100px;
+    transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.seta{
+    transition: 0.3s ease;
+}
+
+.opcoes:hover .seta{
+    color: var(--white) !important;
+    margin-left: 5px;
+}
+
+/* ========== Banner com a Bike ========== */
+
+.banner{
+    width: 55%;
+    margin: 100px;
+}
+
+.titulo{
+    line-height: 1.5;
+    margin-bottom: 50px;
+}
+
+.titulo p{
+    text-transform: uppercase;
+    font-family: var(--font-body);
+    color: var(--green);
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.titulo h1{
+    font-family: var(--font-display);
+    font-weight: 900;
+    color: var(--slate-900);
+    font-size: 40px;
+
+}
+
+.banner-bike {
+    background: var(--white);
+    border: 2px solid var(--slate-200);
+    border-radius: 10px;
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+    padding: 15px;
+    height: 180px; 
+    max-width: 95%;
+    box-sizing: border-box;
+}
+
+.container-img-bike {
+    height: 100%;
+    width: 220px; 
+    flex-shrink: 0;
+}
+
+.img_bike {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid var(--slate-200);
+}
+
+.bike {
+    display: flex;
+    align-items: center;
+    gap: 20px; 
+    flex: 1;
+    height: 100%;
+}
+
+.tipo-bike{
+    color: var(--green);
+    text-transform: uppercase;
+    font-size: 12px;
+    font-family: var(--font-body);
+    font-weight: bold;
+}
+
+.nome-bike {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 30px; 
+    color: var(--slate-900);
+    margin: 5px 0; 
+    white-space: nowrap; 
+}
+
+.preco{
+    color: var(--green);
+    font-family: var(--font-body);
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.total-reserva {
+    text-align: right; 
+    flex-shrink: 0; 
+}
+
+.dias{
+    color: var(--slate-500);
+    font-family: var(--font-body);
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.valor-total{
+    font-family: var(--font-display);
+    color: var(--slate-900);
+    font-size: 30px;
+}

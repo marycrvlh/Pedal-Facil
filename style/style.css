@@ -28,6 +28,10 @@ body{
     background: var(--bg);
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 .header{
     display: flex;
     justify-content: space-between;

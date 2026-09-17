@@ -3,10 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./style/alugar.css">
     <title>Faça a sua Reserva</title>
 </head>
 <body>
-    
+     <header>
+        <div class="header">
+            <div class="logotipo">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="5.5" cy="17.5" r="3.5"/><circle cx="18.5" cy="17.5" r="3.5"/>
+                    <path d="M5.5 17.5l3-8 4 3 2.5-5H19l-3.5 3.5"/>
+                </svg>
+                <h2> Pedal <span> Fácil </span></h2>
+            </div>
+
+            <div class="opcoes">
+                <nav>
+                    <a href="./index.html"> Voltar <span class="seta"> ➜ </span></a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="banner">
+            <div class="titulo">
+                <p> formulário de reserva </p>
+                <h1> Finalize seu aluguel </h1>
+            </div>
+
+            <div class="banner-bike">
+                <div class="bike">
+                    <div class="container-img-bike">
+                        <img class="img_bike" src="https://images.unsplash.com/photo-1673121414328-52eff37bc6d0?w=600&h=400&fit=crop&auto=format" alt="Bike">
+                    </div>
+
+                    <div>
+                        <p class="tipo-bike" id="tipo-bike">mountain bike</p>
+                        <p class="nome-bike" id="nome-bike">Trek X-Cal 29</p>
+                        <p class="preco" id="preco">R$ 45,00 <small>/dia</small></p>
+                    </div>
+                </div>
+
+                <div class="total-reserva" id="total-reserva">
+                    <p class="dias" id="dias">2 dias</p>
+                    <h2 class="valor-total" id="valor-total">R$90,00</h2>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="formulario-reserva">
+
+                <div class="dados-pessoais">
+                    <h2 class="titulo-destaque"> dados pessoais </h2>
+
+                    <form>
+                        <label for="nome"> Nome Completo <span class="asteristico"> * </span> </label>
+                        <input type="text" placeholder="Ex: Maria Silva">
+                        
+                        <label for="nome"> Telefone <span class="asteristico"> * </span> </label>
+                        <input type="tel" placeholder="(11) 99999-9999">
+                    </form>
+                </div>
+
+                <div class="endereco">
+                    <h2> Endereço completo </h2>
+
+                </div>
+            </div>
+
+        </section>
+
+        
+
+
+    </main>
 </body>
 </html>
