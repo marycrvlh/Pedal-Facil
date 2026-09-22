@@ -49,8 +49,8 @@
                 </div>
 
                 <div class="total-reserva" id="total-reserva">
-                    <p class="dias" id="dias">2 dias</p>
-                    <h2 class="valor-total" id="valor-total">R$90,00</h2>
+                    <p class="dias" id="dias">-- dias</p>
+                    <h2 class="valor-total" id="valor-total">R$ 0,00</h2>
                 </div>
             </div>
         </section>
@@ -58,39 +58,39 @@
         <section>
             <div class="formulario-reserva">
                 <h2 class="titulo-destaque"> dados pessoais </h2>
-
+                
                 <div class="dados-pessoais">
                     <form>
                         <label for="nome"> Nome Completo <span class="asteristico"> * </span> </label>
-                        <input type="text" placeholder="Ex: Maria Silva">
-                        
+                        <input type="text" id="nome" placeholder="Ex: Maria Silva">
+
                         <label for="tel"> Telefone <span class="asteristico"> * </span> </label>
-                        <input type="tel" placeholder="(11) 99999-9999">
+                        <input type="tel" id="tel" placeholder="(11) 99999-9999">
                     </form>
                 </div>
 
                 <div class="endereco">
                     <h2 class="titulo-destaque"> endereço completo </h2>
-
+                    
                     <form>
                         <label for="cep"> CEP <span class="asteristico"> * </span> </label>
-                        <input type="text" placeholder="00000-000">
+                        <input type="text" id="cep" placeholder="00000-000">
 
                         <label for="logradouro"> Logradouro <span class="asteristico"> * </span> </label>
-                        <input type="text" placeholder="Ex: Rua, Avenida, etc.">
+                        <input type="text" id="logradouro" placeholder="Ex: Rua, Avenida, etc.">
 
                         <div class="segunda-linha">
                             <label for="num"> Número <span class="asteristico"> * </span> </label>
-                            <input type="number" placeholder="123">
+                            <input type="number" id="num" placeholder="123">
 
                             <label for="bairro"> Bairro <span class="asteristico"> * </span> </label>
-                            <input type="text" placeholder="Nome do bairro">
+                            <input type="text" id="bairro" placeholder="Nome do bairro">
 
                             <label for="cidade"> Cidade <span class="asteristico"> * </span> </label>
-                            <input type="text" placeholder="São Paulo">
+                            <input type="text" id="cidade" placeholder="São Paulo">
 
-                            <label for="estado"> LIF <span class="asteristico"> * </span> </label>
-                            <input type="text" placeholder="SP">
+                            <label for="estado"> UF <span class="asteristico"> * </span> </label>
+                            <input type="text" id="estado" maxlength="2" placeholder="SP">
                         </div>
                     </form>
                 </div>
@@ -99,19 +99,44 @@
                     <h2 class="titulo-destaque"> período de empréstimo </h2>
                         <form>
                             <label for="data-retirada"> Data de retirada <span class="asteristico"> * </span> </label>
-                            <input type="date" placeholder="dd/mm/aaaa">
-                            
+                            <input type="date" id="data-retirada">
+
                             <label for="h-retirada"> Horário de Retirada <span class="asteristico"> * </span> </label>
-                            <input type="time" placeholder="--:--">
-    
+                            <input type="time" id="h-retirada">
+
                             <label for="data-devolucao"> Data de devolução <span class="asteristico"> * </span> </label>
-                            <input type="date" placeholder="dd/mm/aaaa">
+                            <input type="date" id="data-devolucao">
                         </form>
                 </div>
+
+                <div class="resumo-reserva" id="resumo-reserva">
+                    <div>
+                        <p class="resumo-dias" id="resumo-dias">Selecione as datas</p>
+                        <p class="resumo-pagamento">Pagamento na retirada</p>
+                    </div>
+                    <h2 class="resumo-total" id="resumo-total">R$ 0,00</h2>
+                </div>
             </div>
+
+            <button class="botao-reserva" onclick="AbrirModal()"> Confirmar reserva </button>
         </section>
 
-        <button class="botao-reserva" onclick="AbrirModal()"> Confirmar reserva </button>
     </main>
+
+    <!-- ======== MODAL DE CONFIRMAÇÃO ======== -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal-confirmacao">
+            <div class="icone-sucesso">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="4 12 9 17 20 6"></polyline>
+                </svg>
+            </div>
+            <h2>Reserva confirmada!</h2>
+            <p>Obrigado, <strong id="modal-nome"></strong>! Sua reserva da <strong id="modal-bike"></strong> foi recebida.</p>
+            <a href="./index.html" class="botao-reserva" >Voltar ao catálogo</a>
+        </div>
+    </div>
+
+    <script src="script.js" defer></script>
 </body>
 </html>
