@@ -1,150 +1,190 @@
-
 :root {
-  --green: #16a34a;
-  --green-dark: #15803d;
-  --green-light: #dcfce7;
-  --green-pale: #f0fdf4;
-  --slate-900: #0f172a;
-  --slate-700: #334155;
-  --slate-500: #64748b;
-  --slate-400: #94a3b8;
-  --slate-200: #e2e8f0;
-  --slate-100: #f1f5f9;
-  --white: #ffffff;
-  --bg: #f8fafc;
-  --font-display: 'Outfit', sans-serif;
-  --font-body: 'Inter', sans-serif;
-}
-
-*{
-    margin: 0%;
-    padding: 0%;
+    --green: #16a34a;
+    --green-dark: #15803d;
+    --green-light: #dcfce7;
+    --green-pale: #f0fdf4;
+    --slate-900: #0f172a;
+    --slate-700: #334155;
+    --slate-500: #64748b;
+    --slate-400: #94a3b8;
+    --slate-200: #e2e8f0;
+    --slate-100: #f1f5f9;
+    --white: #ffffff;
+    --bg: #f8fafc;
+    --font-display: "Outfit", sans-serif;
+    --font-body: "Inter", sans-serif;
+  }
+  
+  /* =========================
+     RESET
+  ========================= */
+  
+  * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-}
-
-body{
-    margin: 0%;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
     min-height: 100vh;
     background: var(--bg);
-}
-
-html{
-    scroll-behavior: smooth;
-}
-
-.header{
+    overflow-x: hidden;
+  }
+  
+  img {
+    display: block;
+    max-width: 100%;
+  }
+  
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  
+  /* =========================
+     HEADER
+  ========================= */
+  
+  .header {
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 20px;
+    align-items: center;
+    padding: 18px clamp(20px, 5vw, 60px);
     background: var(--slate-100);
     border-bottom: 1px solid var(--slate-400);
-    align-items: center;
-}
-
-.logotipo{
+  }
+  
+  .logotipo {
     display: flex;
     align-items: center;
     gap: 5px;
-    margin-left: 40px;
-}
-
-.logotipo svg{
+  }
+  
+  .logotipo svg {
     width: 30px;
     height: auto;
-}
-.logotipo svg, span{
-    color: #16a34a;
-}
-
-.logotipo h2{
-    font-size: 28px;
+    color: var(--green);
+  }
+  
+  .logotipo h2 {
+    font-size: clamp(22px, 3vw, 28px);
     font-family: var(--font-display);
-}
-
-.opcoes a{
+  }
+  
+  .logotipo span {
+    color: var(--green);
+  }
+  
+  .opcoes nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .opcoes a {
+    display: inline-block;
     font-family: var(--font-display);
-    padding: 10px;
+    padding: 10px 14px;
     color: var(--slate-500);
-    gap: 50px;
     text-decoration: none;
-    font-size: 18px;
-    margin-right: 40px;
-}
-
-.opcoes a:hover{
-    background: var(--slate-400);
-    color: var(--white);
+    font-size: 17px;
     border-radius: 100px;
     transition:
-    background 0.3s ease,
-    color 0.3s ease;
-}
-
-.alugar{
-    background: #16a34a;
+      background 0.3s ease,
+      color 0.3s ease;
+  }
+  
+  .opcoes a:hover {
+    background: var(--slate-400);
+    color: var(--white);
+  }
+  
+  .opcoes .alugar {
+    background: var(--green);
     color: var(--white) !important;
-    border-radius: 100px;
-    font-family: var(--font-display);
-}
-
-.alugar:hover{
+  }
+  
+  .opcoes .alugar:hover {
     background: var(--green-dark) !important;
-    box-shadow: 0 0px 15px rgb(0, 0, 0, 0.1);
-    transition: 
-        background 0.3s ease;
-}
-
-/* ------ Conteúdo do Hero --------- */
-.hero{
-    margin: 70px;
-    padding: 20px;
+    box-shadow: 0 0 15px rgb(0 0 0 / 10%);
+  }
+  
+  
+  /* =========================
+     HERO
+  ========================= */
+  
+  .hero {
+    width: min(1400px, 100%);
+    margin: 0 auto;
+    padding: clamp(50px, 7vw, 90px) clamp(20px, 5vw, 70px);
+  
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
- }
-
-.titulo-principal p{
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: clamp(30px, 5vw, 80px);
+    align-items: center;
+  }
+  
+  .titulo-principal p {
+    width: fit-content;
     text-transform: uppercase;
     color: var(--green);
     font-family: var(--font-display);
     font-size: 12px;
     font-weight: 700;
-    margin-bottom: 50px;
+    margin-bottom: 35px;
     background: #16a34a28;
     padding: 10px;
-    width: 170px;
     border-radius: 10px;
-}
-
-.titulo-principal h2{
+  }
+  
+  .titulo-principal h2 {
     font-family: var(--font-display);
-    font-size: 80px;
+    font-size: clamp(45px, 5.5vw, 80px);
     line-height: 1;
-}
-
-.sub-titulo{
-    margin-top: 20px;
+    color: var(--slate-900);
+  }
+  
+  .titulo-principal h2 span {
+    color: var(--green);
+  }
+  
+  .sub-titulo {
+    margin-top: 25px;
     color: var(--slate-500);
     font-weight: 400;
     font-family: var(--font-body);
-}
-
-.imagem-hero{
+    line-height: 1.7;
+  }
+  
+  .imagem-hero {
+    width: 100%;
+    height: clamp(350px, 42vw, 600px);
+    object-fit: cover;
     border-radius: 10px;
-    box-shadow: 0 0px 10px rgb(0, 0, 0, 0.2);
-}
-
-.card-flutuante{
+    box-shadow: 0 0 10px rgb(0 0 0 / 20%);
+  }
+  
+  .card-flutuante {
     background: var(--white);
     padding: 20px;
     border-radius: 20px;
-    box-shadow: 0 0px 10px rgb(0, 0, 0, 0.2);
-    width: 300px;
+    box-shadow: 0 0 10px rgb(0 0 0 / 20%);
+  
+    width: min(300px, 80%);
     position: relative;
-    bottom: 70px;
-    margin-left: -80px;
-}
-
-.card-flutuante h2{
+    margin-top: -70px;
+    margin-left: -50px;
+    z-index: 2;
+  }
+  
+  .card-flutuante h2 {
     font-family: var(--font-body);
     font-size: 12px;
     font-weight: 700;
@@ -153,402 +193,915 @@ html{
     margin-bottom: 20px;
     padding-bottom: 10px;
     text-align: center;
-}
-
-.bikes-disponiveis{
+  }
+  
+  .bikes-disponiveis {
     display: flex;
     align-items: center;
     gap: 10px;
     margin-left: 20px;
-    margin-bottom: 30px;
-}
-
-.bikes-disponiveis p{
+    margin-bottom: 10px;
+  }
+  
+  .bikes-disponiveis p {
     font-family: var(--font-display);
     font-weight: 700;
     font-size: 18px;
-}
-
-.bikes-disponiveis svg{
+  }
+  
+  .bikes-disponiveis svg {
     width: 30px;
     height: auto;
-}
-
-.botoes-opcoes{
+  }
+  
+  
+  /* =========================
+     BOTÕES HERO
+  ========================= */
+  
+  .botoes-opcoes {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
     margin-top: 50px;
     font-family: var(--font-display);
-}
-
-.botoes-opcoes a{
+  }
+  
+  .botoes-opcoes a {
     color: var(--slate-500);
     text-decoration: none;
     cursor: pointer;
     transition: 0.3s ease;
-}
-
-.botoes-opcoes a:hover{
+  }
+  
+  .botoes-opcoes a:hover {
     text-decoration: underline;
-    transform: translateY(-8px);
-}
-
-.botao-verde{
-    margin-right: 40px;
+    transform: translateY(-3px);
+  }
+  
+  .botoes-opcoes .botao-verde {
+    margin-right: 0;
     background: var(--green);
     color: var(--white) !important;
-    padding: 20px;
+    padding: 18px 22px;
     border-radius: 100px;
-    box-shadow: 0 0px 15px #16a34a6e;
-}
-
-.botao-verde:hover{
+    box-shadow: 0 0 15px #16a34a6e;
+  }
+  
+  .botao-verde:hover {
     text-decoration: none !important;
-    transition: background 0.3s ease;
     background: var(--green-dark);
-}
-
-/* ----- cards ------- */
-.container-infos{
+  }
+  
+  
+  /* =========================
+     INFORMAÇÕES
+  ========================= */
+  
+  .container-infos {
+    grid-column: 1 / -1;
+  
+    width: 100%;
+    max-width: 850px;
+  
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+  
     border-radius: 10px;
-    max-width: 700px;
     text-align: center;
-    padding: 40px;
-    position: relative;
-    bottom: 200px;
-    margin-left: -90px;
-}
-
-.info{
+    padding: 35px 20px;
+  
+    margin: 10px auto 0;
+  }
+  
+  .info {
     font-family: var(--font-body);
     line-height: 2;
     color: var(--slate-500);
-}
-
-.info p{
+  }
+  
+  .info-card {
+    color: var(--slate-900);
+  }
+  
+  .info p {
     font-weight: bold;
-}
-
-/* seção dois de informações */
-.section-2{
+    font-size: 13px;
+  }
+  
+  
+  /* =========================
+     SEÇÃO COMO FUNCIONA
+  ========================= */
+  
+  .section-2 {
     background: var(--slate-100);
-    padding: 70px;
+    padding: clamp(50px, 7vw, 80px) clamp(20px, 5vw, 70px);
     border: 2px solid var(--slate-200);
-}
-
-.como-funciona{
+  }
+  
+  .como-funciona {
     text-align: center;
     font-family: var(--font-display);
     font-weight: 700;
-    font-size: 30px;
-    margin-bottom: 70px;
-}
-
-.fileira-cards{
+    font-size: clamp(28px, 4vw, 40px);
+    margin-bottom: 60px;
+  }
+  
+  .fileira-cards {
+    width: min(1400px, 100%);
+    margin: 0 auto;
+  
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 20px;
-}
-
-.card{
+  }
+  
+  .card {
+    width: 100%;
+    min-height: 270px;
+  
     background: var(--white);
-    box-shadow: 0 0px 25px rgb(0, 0, 0, 0.1);
-    padding: 20px;
+    box-shadow: 0 0 25px rgb(0 0 0 / 10%);
+    padding: 25px;
     border-radius: 10px;
+  
     display: flex;
     align-items: center;
-    width: 520px;
+    justify-content: space-between;
+    gap: 15px;
+  
     line-height: 1.5;
     transition: 0.3s;
-}
-
-.card:hover{
-    box-shadow: 0 0px 25px #16a34a73;
+  }
+  
+  .card:hover {
+    box-shadow: 0 0 25px #16a34a73;
     cursor: pointer;
     transform: translateY(-8px);
-}
-
-.titulo-verde{
-    font-size: 90px;
-    font-family: var(--font-display);
-    color: #1ac4581c;
-    margin-left: 20px;
-}
-
-.card-conteudo h3{
+  }
+  
+  .card-conteudo {
+    min-width: 0;
+  }
+  
+  .card-conteudo h3 {
     color: var(--green);
     font-family: var(--font-display);
     font-weight: 700;
-}
-
-.card-conteudo h2{
+    margin-bottom: 5px;
+  }
+  
+  .card-conteudo h2 {
     color: var(--slate-900);
     font-family: var(--font-display);
-}
-
-.card-conteudo p{
+    font-size: clamp(20px, 2vw, 27px);
+  }
+  
+  .card-conteudo p {
     color: var(--slate-500);
     font-family: var(--font-display);
-    font-size: 20px;
-    width: 350px;
-}
-
-
-/* ---------------- Catálogo de Bikes -------------------- */
-.section-3{
+    font-size: 17px;
+    width: auto;
+    max-width: 350px;
+    margin-top: 10px;
+  }
+  
+  .titulo-verde {
+    flex-shrink: 0;
+    font-size: clamp(55px, 7vw, 90px);
+    font-family: var(--font-display);
+    color: #1ac4581c;
+  }
+  
+  
+  /* =========================
+     CATÁLOGO
+  ========================= */
+  
+  .section-3 {
     background: var(--bg);
-    padding: 70px;
-}
-
-.titulo-catalogo{
-    gap: 20px;
-    margin-bottom: 50px;
-}
-
-.titulo-catalogo p{
-    font-family: var(--font-body);
-    font-size: 12px;
-    color: var(--slate-400);
-    margin-left: 90%;
-}
-
-.titulo-catalogo h5{
+    padding: clamp(50px, 7vw, 80px) clamp(20px, 5vw, 70px);
+  }
+  
+  .titulo-catalogo {
+    width: min(1400px, 100%);
+    margin: 0 auto 50px;
+  }
+  
+  .titulo-catalogo h5 {
     text-transform: uppercase;
-    color: #16a34a;
+    color: var(--green);
     font-family: var(--font-body);
     font-weight: 700;
     font-size: 12px;
     margin-bottom: 20px;
-}
-
-.titulo-catalogo h1{
+  }
+  
+  .titulo-catalogo h1 {
     font-family: var(--font-display);
-    font-size: 60px;
-}
-
-.cards_catalog {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  margin-top: 4rem;
-  margin-bottom: 10rem;
-}
- 
-.card_catalog {
-  height: 700px;
-  width: 400px;
-  padding: 10px;
-  object-fit: cover;
-  background-color: var(--slate-100);
-  border: 1px solid var(--slate-200);
-  border-radius: 1rem;
-  transition: 0.3s ease;
-}
-
-.card_catalog:hover{
+    font-size: clamp(38px, 5vw, 60px);
+    color: var(--slate-900);
+  }
+  
+  .titulo-catalogo p {
+    font-family: var(--font-body);
+    font-size: 12px;
+    color: var(--slate-400);
+    margin-top: 10px;
+    margin-left: 0;
+  }
+  
+  
+  /* =========================
+     CARDS DAS BIKES
+  ========================= */
+  
+  .cards_catalog {
+    width: min(1400px, 100%);
+    margin: 4rem auto 10rem;
+  
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+  }
+  
+  .card_catalog {
+    position: relative;
+  
+    width: 100%;
+    min-width: 0;
+    min-height: 700px;
+  
+    padding: 10px;
+    background-color: var(--slate-100);
+    border: 1px solid var(--slate-200);
+    border-radius: 1rem;
+  
+    display: flex;
+    flex-direction: column;
+  
+    transition: 0.3s ease;
+  }
+  
+  .card_catalog:hover {
     cursor: pointer;
     transform: translateY(-8px);
-    box-shadow: 0 4px 15px rgb(0, 0, 0, 0.2);
-}
- 
-.popular_badge {
-  position: absolute;
-  z-index: 1000;
-  background-color: var(--green);
-  width: 70px;
-  border-radius: 1rem;
-  margin-top: 15px;
-  margin-left: 10px;
-  padding: 5px;
-}
- 
-.popular_badge p {
-  justify-self: center;
-  font-family: var(--font-body);
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--white);
-}
- 
-.img_bike {
-  height: 50%;
-  width: 100%;
-  object-fit: cover;
-  border-radius: 1rem;
-}
- 
-.class_bike {
-  font-family: var(--font-body);
-  font-size: 12px;
-  font-weight: bold;
-  color: var(--green);
-  margin-left: 12px;
-  margin-top: 10px;
-}
- 
-.name_bike {
-  font-family: var(--font-display);
-  color: var(--slate-900);
-  font-size: 25px;
-  font-weight: bold;
-  margin-left: 10px;
-}
- 
-.description_bike {
-  color: var(--slate-500);
-  font-family: var(--font-body);
-  font-size: 16px;
-  max-width: 300px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  padding-left: 10px;
-}
- 
-.card_catalog hr {
-  color: var(--slate-400);
-  width: 95%;
-  align-self: center;
-  justify-self: center;
-  margin: 20px;
-}
- 
-.pre_value {
-  padding-left: 10px;
-  margin-top: 10px;
-  color: var(--slate-500);
-  font-family: var(--font-body);
-  font-size: 12px;
-}
- 
-.value_available {
-  display: flex;
-  flex-direction: row;
-}
- 
-.value_bike {
-  padding-left: 14px;
-  margin-top: 6px;
-  color: var(--slate-800);
-  font-family: var(--font-display);
-  font-size: 30px;
-  font-weight: bold;
-}
- 
-.slash_day_value {
-  font-family: var(--font-body);
-  font-size: 12px;
-  color: var(--slate-500);
-}
- 
-.value_available li {
-  font-family: var(--font-display);
-  font-size: 14px;
-  font-weight: bold;
-  margin-left: 100%;
-  color: var(--green);
-}
- 
-.button_alocate_div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 30px;
-}
- 
-.alocate_button {
-  background-color: var(--green);
-  border: none;
-  border-radius: 20px;
-  color: var(--white);
-  font-family: var(--font-display);
-  font-size: 16px;
-  font-weight: 700;
-  height: 50px;
-  width: 16rem;
-  cursor: pointer;
-  transition: 0.5s;
-}
- 
-.alocate_button:hover{
-  background-color: var(--green-dark);
-  box-shadow: 0 0px 10px rgb(0, 0, 0, 0.4);
-  transform: translateY(-5px);
-}
- 
-.off {
-  display: none;
-}
- 
-.unavailable {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
- 
-.unavailable.alocate_button {
-  background-color: var(--slate-500);
-}
- 
-.unavailable.alocate_button:hover {
-  box-shadow: none;
-  background-color: var(--slate-500);
-}
- 
-#availability_list_off {
-  color: var(--slate-500);
-}
-
-.container-vamos-pedalar{
-    background: linear-gradient(to left, var(--green-dark), var(--green));
-    margin: 50px;
-    padding: 50px;
-    border-radius: 20px;
+    box-shadow: 0 4px 15px rgb(0 0 0 / 20%);
+  }
+  
+  .popular_badge {
+    position: absolute;
+    z-index: 10;
+  
+    background-color: var(--green);
+    width: 70px;
+  
+    border-radius: 1rem;
+    margin-top: 15px;
+    margin-left: 10px;
+    padding: 5px;
+  }
+  
+  .popular_badge p {
+    text-align: center;
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--white);
+  }
+  
+  .img_bike {
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+    border-radius: 1rem;
+  }
+  
+  .class_bike {
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--green);
+    margin-left: 12px;
+    margin-top: 15px;
+  }
+  
+  .name_bike {
+    font-family: var(--font-display);
+    color: var(--slate-900);
+    font-size: 25px;
+    font-weight: bold;
+    margin: 5px 10px 0;
+  }
+  
+  .description_bike {
+    color: var(--slate-500);
+    font-family: var(--font-body);
+    font-size: 15px;
+    line-height: 1.5;
+  
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+  }
+  
+  .card_catalog hr {
+    color: var(--slate-400);
+    width: calc(100% - 20px);
+    margin: 20px auto;
+  }
+  
+  .pre_value {
+    padding-left: 10px;
+    margin-top: 10px;
+    color: var(--slate-500);
+    font-family: var(--font-body);
+    font-size: 12px;
+  }
+  
+  .value_available {
     display: flex;
-    gap: 50%;
-    height: 200px;
     align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding-right: 10px;
+  }
+  
+  .value_bike {
+    padding-left: 14px;
+    margin-top: 6px;
+    color: var(--slate-900);
+    font-family: var(--font-display);
+    font-size: 30px;
+    font-weight: bold;
+  }
+  
+  .slash_day_value {
+    font-family: var(--font-body);
+    font-size: 12px;
+    color: var(--slate-500);
+  }
+  
+  .value_available ul {
+    padding-left: 0;
+    list-style-position: inside;
+  }
+  
+  .value_available li {
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--green);
+  }
+  
+  .button_alocate_div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+    padding: 20px 0 10px;
+  }
+  
+  .alocate_button {
+    background-color: var(--green);
+    border: none;
+    border-radius: 20px;
+    color: var(--white);
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-weight: 700;
+  
+    height: 50px;
+    width: min(16rem, 100%);
+  
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .alocate_button:hover {
+    background-color: var(--green-dark);
+    box-shadow: 0 0 10px rgb(0 0 0 / 40%);
+    transform: translateY(-5px);
+  }
+  
+  .off {
+    display: none;
+  }
+  
+  .unavailable {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  .unavailable.alocate_button {
+    background-color: var(--slate-500);
+  }
+  
+  .unavailable.alocate_button:hover {
+    box-shadow: none;
+    background-color: var(--slate-500);
+  }
+  
+  #availability_list_off {
+    color: var(--slate-500);
+  }
+  
+  
+  /* =========================
+     CTA FINAL
+  ========================= */
+  
+  .container-vamos-pedalar {
+    width: min(1300px, 100%);
+    min-height: 200px;
+  
+    background: linear-gradient(
+      to left,
+      var(--green-dark),
+      var(--green)
+    );
+  
+    margin: 50px auto 0;
+    padding: 40px clamp(25px, 5vw, 60px);
+  
+    border-radius: 20px;
+  
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+  
     overflow: hidden;
-}
-
-.titulo-destaque h2{
+  }
+  
+  .titulo-destaque {
+    min-width: 0;
+  }
+  
+  .titulo-destaque h2 {
     color: var(--white);
     font-family: var(--font-display);
     font-weight: bold;
-    font-size: 30px;
-    margin-bottom: 20px;
-}
-
-.titulo-destaque p{
+    font-size: clamp(25px, 3vw, 35px);
+    margin-bottom: 15px;
+  }
+  
+  .titulo-destaque p {
     color: var(--white);
     font-family: var(--font-body);
     font-size: 16px;
-}
-
-.alugue-sua-bike{
+    line-height: 1.5;
+  }
+  
+  .alugue-sua-bike {
+    flex-shrink: 0;
+  
     text-align: center;
     width: 250px;
     padding: 15px;
+  
     border: none;
     border-radius: 20px;
+  
     background: var(--white);
     font-family: var(--font-body);
     font-weight: bold;
     font-size: 15px;
-    box-shadow: 0 5px 20px rgb(0, 0, 0, 0.5);
+  
+    box-shadow: 0 5px 20px rgb(0 0 0 / 50%);
     cursor: pointer;
     transition: 0.3s ease;
-}
-
-.alugue-sua-bike:hover{
+  }
+  
+  .alugue-sua-bike:hover {
     transform: translateY(-5px);
-}
-
-.alugue-sua-bike:hover .seta{
+  }
+  
+  .alugue-sua-bike:hover .seta {
     margin-left: 15px;
-}
-
-.seta{
+  }
+  
+  .seta {
     transition: 0.3s ease;
     margin-left: 10px;
-    color: #16a34a;
+    color: var(--green);
     font-size: 15px;
     font-weight: bold;
-}
+  }
+  
+  
+  /* =========================================================
+     TABLET
+  ========================================================= */
+  
+  @media (max-width: 1100px) {
+  
+    .hero {
+      grid-template-columns: 1fr 1fr;
+      column-gap: 30px;
+    }
+  
+    .titulo-principal h2 {
+      font-size: clamp(42px, 5vw, 65px);
+    }
+  
+    .cards_catalog {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  
+    .fileira-cards {
+      grid-template-columns: 1fr;
+      max-width: 700px;
+    }
+  
+    .card {
+      min-height: 220px;
+    }
+  }
+  
+  
+  /* =========================================================
+     TABLET / CELULAR GRANDE
+  ========================================================= */
+  
+  @media (max-width: 768px) {
+  
+    /* Header */
+  
+    .header {
+      padding: 15px 20px;
+    }
+  
+    .logotipo h2 {
+      font-size: 23px;
+    }
+  
+    .logotipo svg {
+      width: 25px;
+    }
+  
+    .opcoes nav {
+      gap: 2px;
+    }
+  
+    .opcoes a {
+      font-size: 14px;
+      padding: 8px 10px;
+    }
+  
+  
+    /* Hero */
+  
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+  
+      padding: 50px 20px 30px;
+      gap: 45px;
+    }
+  
+    .titulo-principal p {
+      margin-bottom: 25px;
+    }
+  
+    .titulo-principal h2 {
+      font-size: clamp(42px, 10vw, 60px);
+    }
+  
+    .sub-titulo {
+      font-size: 15px;
+    }
+  
+    .sub-titulo br {
+      display: none;
+    }
+  
+    .botoes-opcoes {
+      margin-top: 35px;
+      gap: 20px;
+    }
+  
+    .imagem-hero {
+      height: 400px;
+    }
+  
+    .card-flutuante {
+      width: min(300px, calc(100% - 30px));
+      margin: -60px auto 0;
+    }
+  
+    .container-infos {
+      width: 100%;
+      margin: 0;
+      padding: 20px 5px;
+    }
+  
+    .info {
+      line-height: 1.5;
+    }
+  
+    .info h2 {
+      font-size: 22px;
+    }
+  
+    .info p {
+      font-size: 10px;
+    }
+  
+  
+    /* Como funciona */
+  
+    .section-2 {
+      padding: 60px 20px;
+    }
+  
+    .como-funciona {
+      margin-bottom: 40px;
+    }
+  
+    .fileira-cards {
+      gap: 15px;
+    }
+  
+    .card {
+      min-height: 200px;
+      padding: 20px;
+    }
+  
+    .card-conteudo h2 {
+      font-size: 22px;
+    }
+  
+    .card-conteudo p {
+      font-size: 15px;
+    }
+  
+    .titulo-verde {
+      font-size: 60px;
+    }
+  
+  
+    /* Catálogo */
+  
+    .section-3 {
+      padding: 60px 20px;
+    }
+  
+    .cards_catalog {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 15px;
+      margin-top: 3rem;
+      margin-bottom: 6rem;
+    }
+  
+    .card_catalog {
+      min-height: 680px;
+    }
+  
+    .img_bike {
+      height: 240px;
+    }
+  
+  
+    /* CTA */
+  
+    .container-vamos-pedalar {
+      flex-direction: column;
+      align-items: flex-start;
+  
+      min-height: auto;
+  
+      margin: 30px auto 0;
+      padding: 35px 25px;
+      gap: 30px;
+    }
+  
+    .alugue-sua-bike {
+      width: 100%;
+    }
+  }
+  
+  
+  /* =========================================================
+     CELULAR
+  ========================================================= */
+  
+  @media (max-width: 600px) {
+  
+    /* Header */
+  
+    .header {
+      flex-direction: column;
+      gap: 15px;
+      padding: 18px 15px;
+    }
+  
+    .opcoes {
+      width: 100%;
+    }
+  
+    .opcoes nav {
+      width: 100%;
+      justify-content: center;
+    }
+  
+    .opcoes a {
+      font-size: 13px;
+      padding: 8px 10px;
+    }
+  
+  
+    /* Hero */
+  
+    .hero {
+      padding: 40px 15px 20px;
+      gap: 35px;
+    }
+  
+    .titulo-principal h2 {
+      font-size: clamp(40px, 12vw, 52px);
+    }
+  
+    .sub-titulo {
+      font-size: 14px;
+    }
+  
+    .botoes-opcoes {
+      flex-direction: column;
+      align-items: stretch;
+      text-align: center;
+      gap: 25px;
+    }
+  
+    .botoes-opcoes .botao-verde {
+      padding: 16px;
+    }
+  
+    .imagem-hero {
+      height: 300px;
+    }
+  
+    .card-flutuante {
+      width: calc(100% - 20px);
+      margin: -50px auto 0;
+      padding: 17px;
+    }
+  
+    .bikes-disponiveis {
+      margin-left: 5px;
+    }
+  
+    .bikes-disponiveis p {
+      font-size: 15px;
+    }
+  
+    .container-infos {
+      padding: 10px 0;
+      gap: 5px;
+    }
+  
+    .info h2 {
+      font-size: 20px;
+    }
+  
+    .info p {
+      font-size: 8px;
+    }
+  
+  
+    /* Como funciona */
+  
+    .section-2 {
+      padding: 50px 15px;
+    }
+  
+    .como-funciona {
+      font-size: 28px;
+      margin-bottom: 35px;
+    }
+  
+    .card {
+      min-height: auto;
+      padding: 20px 15px;
+    }
+  
+    .card-conteudo h3 {
+      font-size: 14px;
+    }
+  
+    .card-conteudo h2 {
+      font-size: 20px;
+    }
+  
+    .card-conteudo p {
+      font-size: 14px;
+    }
+  
+    .titulo-verde {
+      font-size: 48px;
+    }
+  
+  
+    /* Catálogo */
+  
+    .section-3 {
+      padding: 50px 15px;
+    }
+  
+    .titulo-catalogo {
+      margin-bottom: 30px;
+    }
+  
+    .titulo-catalogo h1 {
+      font-size: 38px;
+    }
+  
+    .cards_catalog {
+      grid-template-columns: 1fr;
+      margin-top: 2rem;
+      margin-bottom: 5rem;
+    }
+  
+    .card_catalog {
+      min-height: auto;
+      padding: 10px;
+    }
+  
+    .img_bike {
+      height: 250px;
+    }
+  
+    .name_bike {
+      font-size: 24px;
+    }
+  
+    .description_bike {
+      font-size: 14px;
+    }
+  
+    .value_bike {
+      font-size: 28px;
+    }
+  
+    .alocate_button {
+      width: 100%;
+    }
+  
+  
+    /* CTA */
+  
+    .container-vamos-pedalar {
+      border-radius: 15px;
+      padding: 30px 20px;
+    }
+  
+    .titulo-destaque h2 {
+      font-size: 27px;
+    }
+  
+    .titulo-destaque p {
+      font-size: 14px;
+    }
+  
+    .alugue-sua-bike {
+      width: 100%;
+    }
+  }
+  
+  
+  /* =========================================================
+     CELULARES MUITO PEQUENOS
+  ========================================================= */
+  
+  @media (max-width: 380px) {
+  
+    .opcoes a {
+      font-size: 12px;
+      padding: 7px 8px;
+    }
+  
+    .titulo-principal h2 {
+      font-size: 37px;
+    }
+  
+    .container-infos {
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
+  
+    .info p {
+      font-size: 10px;
+    }
+  
+    .card {
+      align-items: flex-start;
+    }
+  
+    .titulo-verde {
+      font-size: 40px;
+    }
+  }
+  
