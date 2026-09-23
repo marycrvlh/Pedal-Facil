@@ -61,11 +61,17 @@
                 
                 <div class="dados-pessoais">
                     <form>
-                        <label for="nome"> Nome Completo <span class="asteristico"> * </span> </label>
-                        <input type="text" id="nome" placeholder="Ex: Maria Silva">
+                        <div class="linha linha-2">
+                            <div class="campo">
+                                <label for="nome"> Nome Completo <span class="asteristico"> * </span> </label>
+                                <input type="text" id="nome" placeholder="Ex: Maria Silva">
+                            </div>
 
-                        <label for="tel"> Telefone <span class="asteristico"> * </span> </label>
-                        <input type="tel" id="tel" placeholder="(11) 99999-9999">
+                            <div class="campo">
+                                <label for="tel"> Telefone <span class="asteristico"> * </span> </label>
+                                <input type="tel" id="tel" placeholder="(11) 99999-9999">
+                            </div>
+                        </div>
                     </form>
                 </div>
 
@@ -73,24 +79,36 @@
                     <h2 class="titulo-destaque"> endereço completo </h2>
                     
                     <form>
-                        <label for="cep"> CEP <span class="asteristico"> * </span> </label>
-                        <input type="text" id="cep" placeholder="00000-000">
+                        <div class="campo">
+                            <label for="cep"> CEP <span class="asteristico"> * </span> </label>
+                            <input type="text" id="cep" placeholder="00000-000">
+                        </div>
 
-                        <label for="logradouro"> Logradouro <span class="asteristico"> * </span> </label>
-                        <input type="text" id="logradouro" placeholder="Ex: Rua, Avenida, etc.">
+                        <div class="campo">
+                            <label for="logradouro"> Logradouro <span class="asteristico"> * </span> </label>
+                            <input type="text" id="logradouro" placeholder="Ex: Rua, Avenida, etc.">
+                        </div>
 
                         <div class="segunda-linha">
-                            <label for="num"> Número <span class="asteristico"> * </span> </label>
-                            <input type="number" id="num" placeholder="123">
+                            <div class="campo">
+                                <label for="num"> Número <span class="asteristico"> * </span> </label>
+                                <input type="number" id="num" placeholder="123">
+                            </div>
 
-                            <label for="bairro"> Bairro <span class="asteristico"> * </span> </label>
-                            <input type="text" id="bairro" placeholder="Nome do bairro">
+                            <div class="campo">
+                                <label for="bairro"> Bairro <span class="asteristico"> * </span> </label>
+                                <input type="text" id="bairro" placeholder="Nome do bairro">
+                            </div>
 
-                            <label for="cidade"> Cidade <span class="asteristico"> * </span> </label>
-                            <input type="text" id="cidade" placeholder="São Paulo">
+                            <div class="campo">
+                                <label for="cidade"> Cidade <span class="asteristico"> * </span> </label>
+                                <input type="text" id="cidade" placeholder="São Paulo">
+                            </div>
 
-                            <label for="estado"> UF <span class="asteristico"> * </span> </label>
-                            <input type="text" id="estado" maxlength="2" placeholder="SP">
+                            <div class="campo">
+                                <label for="estado"> UF <span class="asteristico"> * </span> </label>
+                                <input type="text" id="estado" maxlength="2" placeholder="SP">
+                            </div>
                         </div>
                     </form>
                 </div>
@@ -98,14 +116,22 @@
                 <div class="emprestimo">
                     <h2 class="titulo-destaque"> período de empréstimo </h2>
                         <form>
-                            <label for="data-retirada"> Data de retirada <span class="asteristico"> * </span> </label>
-                            <input type="date" id="data-retirada">
+                            <div class="linha linha-3">
+                                <div class="campo">
+                                    <label for="data-retirada"> Data de retirada <span class="asteristico"> * </span> </label>
+                                    <input type="date" id="data-retirada">
+                                </div>
 
-                            <label for="h-retirada"> Horário de Retirada <span class="asteristico"> * </span> </label>
-                            <input type="time" id="h-retirada">
+                                <div class="campo">
+                                    <label for="h-retirada"> Horário de Retirada <span class="asteristico"> * </span> </label>
+                                    <input type="time" id="h-retirada">
+                                </div>
 
-                            <label for="data-devolucao"> Data de devolução <span class="asteristico"> * </span> </label>
-                            <input type="date" id="data-devolucao">
+                                <div class="campo">
+                                    <label for="data-devolucao"> Data de devolução <span class="asteristico"> * </span> </label>
+                                    <input type="date" id="data-devolucao">
+                                </div>
+                            </div>
                         </form>
                 </div>
 
@@ -126,6 +152,7 @@
     <!-- ======== MODAL DE CONFIRMAÇÃO ======== -->
     <div class="modal-overlay" id="modal-overlay">
         <div class="modal-confirmacao">
+            <button type="button" class="fechar-modal" onclick="fecharModal()" aria-label="Fechar">&times;</button>
             <div class="icone-sucesso">
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="4 12 9 17 20 6"></polyline>
@@ -133,7 +160,7 @@
             </div>
             <h2>Reserva confirmada!</h2>
             <p>Obrigado, <strong id="modal-nome"></strong>! Sua reserva da <strong id="modal-bike"></strong> foi recebida.</p>
-            <a href="./index.html" class="botao-reserva" >Voltar ao catálogo</a>
+            <a href="./index.html" class="botao-reserva" onclick="voltarCatalogo(); return false;">Voltar ao catálogo</a>
         </div>
     </div>
 

@@ -37,16 +37,19 @@ const catalogoBikes = {
     }
   };
   
-  // Bike usada caso o usuário chegue direto nesta página
-  // (sem passar pelo catálogo), só para a página não ficar vazia.
   const bikePadrao = catalogoBikes.trekXcal29;
   
   let bikeAtual = bikePadrao;
   
   document.addEventListener("DOMContentLoaded", () => {
-    carregarBikeSelecionada();
-    configurarDatas();
-    atualizarResumo();
+    const estaNaPaginaDeAluguel = document.getElementById("tipo-bike") !== null;
+
+    if (estaNaPaginaDeAluguel) {
+      carregarBikeSelecionada();
+      configurarDatas();
+      atualizarResumo();
+      configurarModal();
+    }
   });
   
   function carregarBikeSelecionada() {
@@ -193,4 +196,22 @@ const catalogoBikes = {
   function voltarCatalogo() {
     localStorage.removeItem("bikeSelecionada");
     window.location.href = "./index.html";
+  }
+  
+  // Liga os eventos do modal que existiam no código mas nunca eram
+  // chamados por nenhum elemento: fechar clicando fora e com a tecla Esc.
+  function configurarModal() {
+    const overlay = document.getElementById("modal-overlay");
+  
+    overlay.addEventListener("click", (evento) => {
+      if (evento.target === overlay) {
+        fecharModal();
+      }
+    });
+  
+    document.addEventListener("keydown", (evento) => {
+      if (evento.key === "Escape" && overlay.classList.contains("ativo")) {
+        fecharModal();
+      }
+    });
   }

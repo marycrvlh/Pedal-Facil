@@ -34,11 +34,10 @@
   }
   
   .header{
-      position: absolute;
-      z-index: 1000;
       width: 100%;
       display: flex;
       justify-content: center;
+      flex-wrap: wrap;
       padding: 20px;
       background: var(--slate-100);
       border-bottom: 1px solid var(--slate-400);
@@ -96,8 +95,8 @@
   /* ========== Banner com a Bike ========== */
   
   .banner{
-      width: 55%;
-      margin: 100px;
+      width: min(900px, 90%);
+      margin: 60px auto 40px;
   }
   
   .titulo{
@@ -207,10 +206,38 @@
       margin-bottom: 20px;
   }
   
-  .dados-pessoais form{
+  .dados-pessoais form,
+  .endereco form,
+  .emprestimo form{
       display: flex;
       flex-direction: column;
       margin-bottom: 20px;
+      gap: 20px;
+  }
+
+  .campo{
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      min-width: 0;
+  }
+  
+  .linha,
+  .segunda-linha{
+      display: grid;
+      gap: 20px;
+  }
+  
+  .linha-2{
+      grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .linha-3{
+      grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .segunda-linha{
+      grid-template-columns: repeat(4, 1fr);
       gap: 15px;
   }
   
@@ -229,11 +256,14 @@
   .dados-pessoais input,
   .endereco input,
   .emprestimo input{
+      width: 100%;
       padding: 15px;
       border-radius: 10px;
       border: 2px solid var(--slate-400);
       font-size: 16px;
+      font-family: var(--font-body);
       transition: border-color 0.2s ease, background 0.2s ease;
+      box-sizing: border-box;
   }
   
   .dados-pessoais input:focus,
@@ -241,10 +271,6 @@
   .emprestimo input:focus{
       outline: none;
       border-color: var(--green);
-  }
-  
-  input[type='tel'] {
-      width: 500px;
   }
   
   /* ======== RESUMO DA RESERVA ======== */
@@ -294,12 +320,13 @@
       font-size: 16px;
       cursor: pointer;
       margin-top: 40px;
-      transition: background 0.2s ease;
+      transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
   }
   
   .botao-reserva:hover{
+      transform: translateY(-2px);
       background: var(--green-dark);
-      box-shadow: 0 0px 15px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
   
   /* ======== CAMPO INVÁLIDO ======== */
@@ -331,6 +358,7 @@
   }
   
   .modal-confirmacao{
+      position: relative;
       background: var(--white);
       border-radius: 16px;
       padding: 50px 40px;
@@ -339,6 +367,27 @@
       width: 100%;
       transform: translateY(20px);
       transition: transform 0.25s ease;
+  }
+  
+  .fechar-modal{
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 32px;
+      height: 32px;
+      border: none;
+      border-radius: 50%;
+      background: var(--slate-100);
+      color: var(--slate-500);
+      font-size: 20px;
+      line-height: 1;
+      cursor: pointer;
+      transition: background 0.2s ease, color 0.2s ease;
+  }
+  
+  .fechar-modal:hover{
+      background: var(--slate-200);
+      color: var(--slate-900);
   }
   
   .modal-overlay.ativo .modal-confirmacao{
@@ -378,4 +427,108 @@
   .modal-confirmacao .botao-reserva{
       width: 100%;
       margin-bottom: 0;
+  }
+  
+  /* =========================================================
+     RESPONSIVIDADE
+  ========================================================= */
+  
+  @media (max-width: 900px) {
+  
+    .banner{
+        width: 95%;
+        margin: 40px auto 30px;
+    }
+  
+    .titulo h1{
+        font-size: 32px;
+    }
+  
+    .linha-3{
+        grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .segunda-linha{
+        grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 700px) {
+  
+    .header{
+        gap: 20px;
+        padding: 15px;
+    }
+  
+    .logotipo{
+        margin-left: 0;
+    }
+  
+    .banner-bike{
+        flex-direction: column;
+        align-items: stretch;
+        height: auto;
+        gap: 20px;
+    }
+  
+    .bike{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+  
+    .container-img-bike{
+        width: 100%;
+        height: 160px;
+    }
+  
+    .nome-bike{
+        white-space: normal;
+        font-size: 24px;
+    }
+  
+    .total-reserva{
+        text-align: left;
+    }
+  
+    .linha-2,
+    .linha-3,
+    .segunda-linha{
+        grid-template-columns: 1fr;
+    }
+  
+    .resumo-reserva{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+  
+    main{
+        padding: 15px;
+    }
+  
+    .banner{
+        margin: 25px auto 20px;
+    }
+  
+    .titulo h1{
+        font-size: 26px;
+    }
+  
+    .formulario-reserva{
+        padding: 0;
+    }
+  
+    .dados-pessoais label,
+    .endereco label,
+    .emprestimo label{
+        font-size: 16px;
+    }
+  
+    .modal-confirmacao{
+        padding: 40px 25px;
+    }
   }
