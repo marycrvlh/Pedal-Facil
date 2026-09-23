@@ -8,7 +8,7 @@ Aplicação web simples para um site de locação de bicicletas, desenvolvida du
 
 ## 🖼️ Demonstração
 
-- Caso tenha se interessado, confira o projeto através do link: [Pedal Fácil](https://seu-link-aqui.vercel.app)
+- Caso tenha se interessado, confira o projeto através do link: [Pedal Fácil]([https://pedal-facil.vercel.app/])
 
 ## ✨ Funcionalidades
 
